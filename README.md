@@ -1,4 +1,4 @@
 foundation_5
 ============
 
-Theme for blogotext based on Foundation framework v5.x
+Coming soon ... Theme for blogotext based on Foundation framework v5.x
