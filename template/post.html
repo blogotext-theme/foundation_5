@@ -1,0 +1,23 @@
+<article class="news news-alone">
+	<header class="titre">
+		<h2 class="{article_tags_plain}"><a href="{article_lien}" title="{article_chapo}">{article_titre}</a></h2>
+		<p class="date"><i class="fa fa-calendar-o"></i>  {article_date}</p>
+	</header>
+	<!--<p class="chapo">{article_chapo}</p>-->
+	<div class="contenu">
+		{article_contenu}
+	</div>
+	<p class="tags"><i class="fa fa-tag"></i>  Tags de l'article : {article_tags}</p>
+	<p id="nombre_comment"><i class="fa fa-comments-o"></i>  {nombre_commentaires}</p>
+	{BOUCLE_commentaires}
+	<article class="comment" id="{commentaire_ancre}">
+		<h3><img src="{commentaire_gravatar_link}?s=24" class="gravatar-icon" alt="gravatar" /> {commentaire_auteur_lien} - <span class="comments_hours"><i class="fa fa-calendar-o"></i> {commentaire_date} à  <i class="fa fa-clock-o"></i>  {commentaire_heure}</span></h3>
+		{commentaire_contenu}
+		<p class="com-reply"><a href="#form-commentaire" onclick="reply('[b]@[{commentaire_auteur}|#{commentaire_ancre}] :[/b] ');" title="Répondre au commentaire"><i class="fa fa-comment-o"></i>  répondre</a> <a href="#{commentaire_ancre}" title="#lien"><i class="fa fa-link"></i>  lien</a></p>
+	</article>
+	{/BOUCLE_commentaires}
+	<p class="rss"><i class="fa fa-rss"></i>  <a href="{rss_comments}" title="Flux RSS des commentaires de cet article">Flux RSS des commentaires de cet article</a></p>
+	<div id="postcom">
+		{formulaire_commentaire}
+	</div>
+</article>

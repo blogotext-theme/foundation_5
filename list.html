@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<title>{blog_nom}</title>
+	<meta name="generator" content="BlogoText" />
+	<meta name="robots" content="all" />
+	<meta name="author" content="{blog_auteur}" />
+	<meta name="description" content="{blog_description}" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" href="{style}/images/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="57x57" href="{style}/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="{style}/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="{style}/images/apple-touch-icon-114x114.png">
+	<link rel="canonical" href="{racine_du_site}" />
+	<link rel="image_src" href="{style}/images/apple-touch-icon.png" />
+	<meta itemprop="name" content="{article_titre}" />
+	<meta itemprop="description" content="{article_chapo}" />
+	<meta itemprop="image" content="{style}/images/apple-touch-icon.png">
+	<meta property="og:title" content="{blog_nom}" />
+	<meta property="og:url" content="{racine_du_site}" />
+	<meta property="og:description" content="{blog_description}" />
+	<meta property="og:site_name" content="{blog_nom}" />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:image" content="{style}/images/apple-touch-icon.png" />
+	<link type="text/css" rel="stylesheet" href="{style}/css/foundation.min.css" />
+	<!--[if IE 8]><link rel="stylesheet" href="{style}/css/ie8-grid-foundation-4.css"><![endif]-->
+	<link type="text/css" rel="stylesheet" href="{style}/style.css" />
+	<!-- RTL Style --><!--link rel="stylesheet" href="{style}/css/rtl.css"-->
+	<link type="application/rss+xml" rel="alternate" title="RSS 2.0 - Articles" href="{rss}" />
+	<script src="{style}/js/modernizr.js"></script>
+</head>
+<body>
+	<!--[if lt IE 7]>
+		<p class="chromeframe">Votre navigateur internet n'est plus à jour. <a href="http://browsehappy.com/" title="Mettez à jour votre navigateur" rel="external">Mettez à jour votre navigateur aujourd'hui</a> ou <a href="http://www.google.com/chromeframe/?redirect=true" title="install Google Chrome Frame" rel="external">installez le plugin Google Chrome Frame</a> pour une meilleur navigation sur ce site.</p>
+	<![endif]-->
+	<div id="main" class="container">
+		<nav class="top-bar show-for-small" data-topbar>
+			<ul class="title-area">
+				<li class="name"><h1><a href="#">{blog_nom}</a></h1></li>
+				<li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+			</ul>
+			<section class="top-bar-section">
+				<ul class="left">
+					<li><a href="index.php">Blog</a></li>
+					<li><a href="index.php?mode=links">Liens</a></li>
+					<li><a href="index.php?mode=comments">Derniers commentaires</a></li>
+					<li><a href="?random">Un article au hasard !</a></li>
+					<li><a href="rss.php">Fil Rss du Blog</a></li>
+					<li><a href="rss.php?full">Fil Rss complet du Blog</a></li>
+				</ul>
+			</section>
+		</nav>
+		<header class="row hide-for-small">
+			<section id="top" class="large-12 columns">
+				<div id="top_text">
+					<h1><a href="{racine_du_site}" title="Revenir à l'accueil de {blog_nom}">{blog_nom}</a></h1>
+					<h2>{blog_description}</h2>
+				</div>
+			</section>
+		</header>
+		<section class="row hide-for-small">
+			<div class="large-12 columns" data-orbit>
+				<img src="{style}/images/1200x250.gif" alt="slide image"/>
+				<img src="{style}/images/1200x250.gif" alt="slide image"/>
+				<img src="{style}/images/1200x250.gif" alt="slide image"/>
+				<img src="{style}/images/1200x250.gif" alt="slide image"/>
+			</div>
+		</section>
+		<main id="wrapper" class="row">
+			<section id="contenu" class="large-8 columns">
+				{BOUCLE_posts}
+					// ici il s'affichera ce qu'on veut : un article, un commentaire, un lien sauvé…
+					// les thèmes pour ces choses sont dans le dossier "template"
+					// chaque "objet" (lien, article, …) dispose de son propre formatage. 
+					// **** le texte que vous mettez ici (dans la "boucle") ne sera pas éxécuté ni affiché. ****
+				{/BOUCLE_posts}
+			<div id="pagination">{pagination}</div>
+			</section>
+			<aside id="sidebar"class="large-4 columns">
+				<nav id="recherche">
+					<h3><i class="fa fa-search"></i>  Recherche</h3>
+					{recherche}
+					<hr/>
+				</nav>
+				<nav id="navigate">
+					<h3><i class="fa fa-calendar"></i>  Calendrier</h3>
+					{calendrier}
+					<hr/>
+				</nav>
+				<nav id="last_comments" class="panel">
+					<h3><i class="fa fa-comments"></i>  Derniers commentaires</h3>
+					{commentaires_encart}
+					<hr/>
+				</nav>
+				<nav id="tags">
+					<h3><i class="fa fa-tag"></i>  Tags</h3>
+					{categories_encart}
+					<hr/>
+				</nav>
+				<nav id="liens">
+					<h3><i class="fa fa-hand-o-right"></i>  Autres</h3>
+					<ul class="side-nav">
+						<li><a href="index.php" title="Revenir à l'accueil du blog">Blog</a></li>
+						<li><a href="index.php?mode=links" title="Parcourir les liens">Liens</a></li>
+						<li><a href="index.php?mode=comments" title="Lire les derniers commentaires">Derniers commentaires</a></li>
+					</ul>
+					<hr/>
+				</nav>
+				<nav id="random">
+					<h3><i class="fa fa-refresh"></i>  Un article au hasard</h3>
+						<ul class="side-nav">
+							<li><a href="?random" title="Découvrir un article au hasard ?">Un article au hasard ?</a></li>
+						</ul>
+					<hr/>
+				</nav>
+				<nav id="rss">
+					<h3><i class="fa fa-rss"></i>  Fils RSS</h3>
+					<ul class="side-nav">
+						<li><a href="rss.php" title="S'abonner au fil RSS des résumés du blog">RSS : Blog</a></li>
+						<li><a href="rss.php?full" title="S'abonner au fil Rss des articles complets">RSS : Blog (articles complets)</a></li>
+					</ul>
+					<hr/>
+				</nav>
+			</aside>
+		</main>
+		<footer class="row">
+			<section id="footer-page" class="large-12 columns">
+				<div id="copyright"><b>{blog_auteur}</b>, tout droits réservés – Propulsé avec <a rel="external" href="http://lehollandaisvolant.net/blogotext/" title=" Site officiel de BlogoText">BlogoText</a> – Thème par <a rel="external" href="http://www.xoofoo.org" title="Site internet de Kris">Kris</a></div>
+				<div id="social-box">
+					<a rel="external" href="https://www.facebook.com/pages/#" title="Page Facebook"><i class="fa fa-facebook"></i></a>
+					<a rel="external" href="https://twitter.com/{blog_auteur}" title="Nous suivre sur Twitter"><i class="fa fa-twitter"></i></a>
+					<a rel="external" href="http://gplus.to/{blog_auteur}" title="Nous ajouter dans vos cercles"><i class="fa fa-google-plus"></i></a>
+					<a rel="external" href="https://about.me/{blog_auteur}" title="About.Me"><i class="fa fa-smile-o"></i></a>
+					<a rel="external" href="rss.php?full" title="RSS Blog Articles"><i class="fa fa-rss"></i></a>
+				</div>
+			</section>
+		</footer>
+	</div>
+	<script src="{style}/js/vendor/jquery.min.js"></script>
+	<script src="{style}/js/foundation.min.js"></script>
+	<script>
+		$(document).foundation();
+	</script>
+	<script src="{style}/js/monjsamoi.js"></script>
+</body>
+</html>
